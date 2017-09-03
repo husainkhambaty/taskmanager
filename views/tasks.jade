@@ -1,0 +1,42 @@
+extends layout
+block content
+	h3 Tasks
+
+	-function prettyDate(dateString){
+		//if it's already a date object and not a string you don't need this line:
+		-var date = new Date(dateString);
+		-var dd = [ "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat" ][date.getDay()];
+		-var m = [ "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" ][date.getMonth()];
+		-return dd + " " + date.getDate() +' '+ m +' '+ date.getFullYear() + " " + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
+	-}
+
+	table.table.tasks
+		tr
+			th Name 
+			th Command
+			th Last Updated
+			th 
+		for task in result
+			tr
+				+task-card(task)
+
+	//<button type="button" class="btn btn-primary">Primary</button>
+	//glyphicon glyphicon-plus
+	button.btn.btn-primary.btn-sm(type="button", onclick="location.href='/new'") 
+		span.glyphicon.glyphicon-plus(aria-hidden="true")  
+		| Create 
+
+
+mixin task-card(task)
+	td.task-name= task.name
+	td.task-command
+		code= task.command
+	td.task-updatedat
+		//time(datetime="${task.updated_at}")
+		span #{prettyDate(task.updated_at)}
+		//span= task.updated_at
+
+
+	td.task-ops
+		span.glyphicon.glyphicon-pencil(aria-hidden="true") &nbsp;
+		span.glyphicon.glyphicon-trash(aria-hidden="true")

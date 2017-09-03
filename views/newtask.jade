@@ -1,0 +1,18 @@
+extends layout
+block content
+	div.form
+		div.header
+			h3 New Task		
+		div.body
+			form.form-horizontal
+				div.form-group
+					label.control-label.col-sm-3(for="taskName") Task Name
+					div.col-sm-9
+						input.form-control(type="text", name="taskName", id="taskName", value="", placeholder="Task Name")
+				div.form-group
+					label.control-label.col-sm-3(for="taskCommand") Task Command
+					div.col-sm-9
+						input.form-control(type="text", name="taskCommand", id="taskCommand", value="", placeholder="Task Command")
+				div.form-group
+					div.col-sm-offset-3.col-sm-9
+						button.btn.btn-default(type="submit") Create

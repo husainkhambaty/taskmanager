@@ -1,0 +1,20 @@
+{	
+	"db" : {
+		"host" : "localhost",
+		"port" : 27017,
+		"dbName" : "ss"
+	},
+	"web" : {
+		"port" : 8080,
+		"contextRoot" : "",
+		"path" : {
+			"views" : "views",
+			"public" : "public"
+		}
+	},		
+	"app" : {
+		"enableScheduler" : true,
+		"enableAPI" : true
+	}
+	
+}
