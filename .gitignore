@@ -1,0 +1,7 @@
+node_modules
+*backup*
+*lock*
+Diagrams.mdj
+notes.txt
+server.js
+.DS_Store
