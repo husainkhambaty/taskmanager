@@ -24,12 +24,12 @@ function startApp() {
 
 	// Init the DB
 
-	// db.connect(dbConfig, function(err, conn) {
-	// 	if (err) throw err;
-	// 	else console.log("DB has been connected");
-	// });
+	db.connect(dbConfig, function(err, conn) {
+		if (err) throw err;
+		else console.log("DB has been connected");
+	});
 
-	// Init the Webserver
+	// Init the Webserver and setup the routes
 	web.init(webConfig);
 
 }

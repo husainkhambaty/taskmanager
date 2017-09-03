@@ -2,7 +2,7 @@
 	"db" : {
 		"host" : "localhost",
 		"port" : 27017,
-		"dbName" : "ss"
+		"dbName" : "taskdirect-dev"
 	},
 	"web" : {
 		"port" : 8080,
